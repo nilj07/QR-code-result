@@ -10,13 +10,17 @@
         <h1 id="result"></h1>
 
         <script>
-                const h1 = document.getElementById('result');
-                 const params = new URLSearchParams(window.location.search);
-                const params = new URLSearchParams(window.location.search);
-  const newText = params.get('h1Text'); 
-  if (newText) {
-    h1.textContent = decodeURIComponent(newText); 
-  }
+               const h1 = document.getElementById('result');
+
+    // Extract query parameters from the URL
+    const params = new URLSearchParams(window.location.search);
+    const h1Text = params.get('h1Text'); // Get the 'h1Text' query parameter
+
+    if (h1Text) {
+      h1.textContent = decodeURIComponent(h1Text); // Decode the text and display it
+    } else {
+      h1.textContent = "No input provided!";
+    }
         </script>
 </body>
 
