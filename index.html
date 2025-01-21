@@ -10,12 +10,13 @@
         <h1 id="result"></h1>
 
         <script>
-            const result = document.getElementById("result")
-            const storemsg = localStorage.getItem('message')
-
-            if (storemsg) {
-                result.innerHTML = storemsg
-            }
+                const h1 = document.getElementById('result');
+                 const params = new URLSearchParams(window.location.search);
+                const params = new URLSearchParams(window.location.search);
+  const newText = params.get('h1Text'); 
+  if (newText) {
+    h1.textContent = decodeURIComponent(newText); 
+  }
         </script>
 </body>
 
